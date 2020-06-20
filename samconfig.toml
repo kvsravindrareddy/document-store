@@ -3,7 +3,7 @@ version = 0.1
 [default.deploy]
 [default.deploy.parameters]
 stack_name = "document-store"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-q6ouqi9y44z6"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-ri2v5z1dhfci"
 s3_prefix = "document-store"
 region = "ap-south-1"
 confirm_changeset = true

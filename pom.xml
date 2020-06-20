@@ -44,12 +44,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<!-- <exclusions>
+			<exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
-            </exclusions> -->
+            </exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.amazonaws</groupId>
@@ -96,15 +96,15 @@
 		</dependency>
 	</dependencies>
 
-	<build>
+	<!-- <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	</build>
-	<!-- <profiles>
+	</build> -->
+	<profiles>
         <profile>
             <id>shaded-jar</id>
             <build>
@@ -142,7 +142,6 @@
             </activation>
             <build>
                 <plugins>
-                    select and copy only runtime dependencies to a temporary lib folder
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
@@ -185,6 +184,6 @@
                 </plugins>
             </build>
         </profile>
-    </profiles> -->
+    </profiles>
 
 </project>
