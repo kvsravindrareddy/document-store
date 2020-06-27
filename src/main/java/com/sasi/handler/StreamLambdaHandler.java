@@ -40,7 +40,6 @@ public class StreamLambdaHandler implements RequestStreamHandler {
     }
 
     public StreamLambdaHandler() {
-        // we enable the timer for debugging. This SHOULD NOT be enabled in production.
         Timer.enable();
     }
 
