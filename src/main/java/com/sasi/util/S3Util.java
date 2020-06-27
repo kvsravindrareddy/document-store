@@ -11,23 +11,25 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.sasi.config.S3Config;
 
 @Component
 public class S3Util {
 	
+//	@Autowired
+//    private S3Config s3Config;
+	
 	@Autowired
-    private S3Config s3Config;
+	private AmazonS3 amazonS3;
 	
 	public void createBucket(String bucketName)
     {
-		AmazonS3 amazonS3 = s3Config.connectAmazonS3();
         System.out.println("*****Before creating bucket*****");
         boolean flag = false;
         for (Bucket bucket : amazonS3.listBuckets()) {
             if(!flag && bucket.getName().equals(bucketName))
             {
                 flag = true;
+                break;
             }
         }
         if(!flag)
@@ -41,7 +43,6 @@ public class S3Util {
     public void uploadObject(String bucketName,String fileName, byte[] fileBytes, String contentType)
     {
         System.out.println("before uploading file");
-        AmazonS3 amazonS3 = s3Config.connectAmazonS3();
         try {
         ObjectMetadata metadata = new ObjectMetadata();
         metadata.setContentType(contentType);
