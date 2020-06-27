@@ -9,6 +9,10 @@ phases:
     commands:
       - sam build
 
+  post_build:
+    commands:
+      - sam package --template-file template.yml --output-template-file template.yml --s3-bucket codepipeline-ap-south-1-754048210511
+
 artifacts:
   type: zip
   files:
