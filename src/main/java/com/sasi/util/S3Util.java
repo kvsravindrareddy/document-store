@@ -15,9 +15,6 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 @Component
 public class S3Util {
 	
-//	@Autowired
-//    private S3Config s3Config;
-	
 	@Autowired
 	private AmazonS3 amazonS3;
 	
