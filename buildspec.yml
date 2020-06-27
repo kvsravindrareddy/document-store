@@ -11,9 +11,9 @@ phases:
 
   post_build:
     commands:
-      - sam package --template-file template.yml --output-template-file template-out.yml --s3-bucket kvsravindrareddy2020
+      - sam deploy --guided
 
 artifacts:
   type: zip
   files:
-    - template-out.yml
+    - template.yml
